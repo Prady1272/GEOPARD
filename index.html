@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="GEOPARD: Geometric Pretraining for Articulation Prediction in 3D Shapes.">
+  <meta name="keywords" content="Articulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEOPARD: Geometric Pretraining for Articulation Prediction in 3D Shapes</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">GEOPARD: Geometric Pretraining for Articulation Prediction in 3D Shapes.</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://prady1272.github.io">Pradyumn Goyal</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://lodurality.github.io">Dmitry Petrov</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="http://profs.etsmtl.ca/sandrews/">Sheldon Andrews</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.itzikbs.com">Yizhak Ben-Shabat</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.dgp.toronto.edu/~hsuehtil/">Hsueh-Ti Derek Liu</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://kalo-ai.github.io">Evangelos Kalogerakis</a><sup>1,4</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>UMass Amherst,</span>
+            <span class="author-block"><sup>2</sup>École de technologie supérieure</span>
+            <span class="author-block"><sup>3</sup>Roblox</span>
+            <span class="author-block"><sup>4</sup>TU Crete</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2504.02747"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2504.02747"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="hero-body" style="margin:2rem 0;">
+  <img
+    src="./static/images/teaser.png"
+    alt="teaser for geopard"
+    style="width:100%; height:auto;"
+  />
+</div>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          We present <em>GEOPARD</em>, a transformer-based architecture for predicting articulation from a single static snapshot of a 3D shape. 
+          The key idea of our method is a pretraining strategy that allows our transformer to learn plausible candidate articulations for 3D shapes based on a geometric-driven search
+          without manual articulation annotation.  
+          The search automatically discovers physically valid part motions that do not cause detachments or collisions with other shape parts. 
+          Our experiments indicate that this geometric pretraining strategy, along with carefully designed choices in our transformer architecture, yields state-of-the-art results in articulation inference in the PartNet-Mobility dataset.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Architecture</h2>
+
+      <figure class="image">
+        <img 
+          src="./static/images/arch.png"
+          alt="Architecture overview"
+          style="width: 100%; height: auto;"
+        />
+      </figure>
+
+      <div class="content has-text-justified">
+        <p>
+          <strong>GEOPARD overview.</strong> 
+          First, we learn part feature representations <strong>a</strong> from the part points along with shape context representation <strong>b</strong>. 
+          Second, we enhance the part‑level feature representations with the shape context <strong>c</strong>. 
+          Third, the representations are aggregated to a compact, articulation‑aware part feature vector <strong>d</strong>, 
+          which is used to predict the part articulation through three decoding branches: part pivot prediction (<strong>e</strong>), 
+          motion axis prediction (<strong>f</strong>), and motion type prediction (<strong>g</strong>).
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Pretraining</h2>
+
+      <figure class="image">
+        <img 
+          src="./static/images/pretraining_data_examples-final.png"
+          alt="pretraining"
+          style="width: 100%; height: auto;"
+        />
+      </figure>
+
+      <div class="content has-text-justified">
+        <p>
+         To mitigate the challenge of limited annotated data, we proposed a method to generate plausible articulations. For a segmented input (left), we compute a set of possible articulations, 
+         reject the ones that introduce detachments or collisions to the rest of the part (right),
+          and keep the valid candidate articulations (middle) for our pretraining.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+<section class="section">
+<div class="container is-max-desktop">
+  <div class="columns is-centered">
+    <div class="column">
+      <h2 class="title is-3">Articulation Parameters Prediction on PartNet-Mobility Dataset</h2>
+
+      <figure class="image">
+        <img 
+          src="./static/images/qualitative_pointbert.png"
+          alt="pretraining"
+          style="width: 100%; height: auto;"
+        />
+      </figure>
+
+      <div class="content has-text-justified">
+        <div class="content">
+        <p>
+          <span class="legend-square revolute"></span>
+          are parts predicted or labeled as <strong>revolute</strong>,
+          <span class="legend-square prismatic"></span>
+          are parts predicted or labeled as <strong>prismatic</strong>,
+          <span class="legend-square candidate"></span>
+          are <strong>input parts</strong>. Predicted axes are shown with an arrow (<span class="axis-arrow">↑</span>).
+          While baselines based on part abstractions struggle to predict plausible articulation parameters, our base model, using fine‑grained point features, produces articulation parameters closely matching the ground truth — which are further enhanced by our pretraining strategy, supplying geometric and articulation priors refined during fine‑tuning.
+        </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</section>
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{goyal2025geopard,
+  title = {GEOPARD: Geometric Pretraining for Articulation Prediction in 3D Shapes},
+  author = {Goyal, Pradyumn and Petrov, Dmitry and Andrews, Sheldon and Ben-Shabat, Yizhak and Liu, Hsueh-Ti Derek and Kalogerakis, Evangelos},
+  journal = {arXiv preprint arXiv:2504.02747},
+  year = {2025},
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website adapted from the following  <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
